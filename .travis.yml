@@ -1,0 +1,21 @@
+language: go
+sudo: false
+go:
+  - 1.x
+  - tip
+matrix:
+  fast_finish: true
+  allow_failures:
+    - go: tip
+before_install:
+  - go get -u golang.org/x/tools/cmd/cover
+  - go get -u github.com/mattn/goveralls
+  - go get -u github.com/golang/dep/cmd/dep
+  - go get -u github.com/alecthomas/gometalinter
+  - gometalinter --install --update
+install: dep ensure
+script:
+  - gometalinter ./...
+  - go test -race -v -covermode=atomic -coverprofile=coverage.out ./...
+after_success:
+  - goveralls -coverprofile=coverage.out -service=travis-ci
