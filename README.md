@@ -23,6 +23,4 @@ func main() {
 
 ```
 
-[^1]: https://arxiv.org/pdf/1406.2294.pdf
-
-<sup id="footnote-paper">1</sup> https://arxiv.org/pdf/1406.2294.pdf [↩](#anchor-paper)
+<sup id="footnote-paper">1</sup> ["A Fast, Minimal Memory, Consistent Hash Algorithm" by John Lamping and Eric Veach.](https://arxiv.org/pdf/1406.2294.pdf) [↩](#anchor-paper)
